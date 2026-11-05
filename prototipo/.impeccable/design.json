@@ -1,0 +1,174 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-10-23T07:30:00Z",
+  "title": "Design System: Tablero de Dinero",
+  "extensions": {
+    "provenance": {
+      "direction": "The user chose 'the category standard' in black and white (the standing exit / canon path, not a concept roll), in another session. It replaces the earlier petrol + maravilla direction from the three-way debate; nothing of that world carries forward.",
+      "brandCommitment": "Interfaz en blanco y negro; verde solo para lo positivo, rojo solo para alertas (asked for explicitly by the user).",
+      "build": "Tokens and rules read from index.html (published as version 7 of the claude.ai artifact). index.antes-bn.html was consulted as evidence of the change only."
+    },
+    "colorMeta": {
+      "ink": { "role": "primary", "displayName": "Ledger Ink", "canonical": "#111111", "cssVar": "--ink", "dark": "#F2F2F2", "tonalRamp": ["#111111", "#2A2A2A", "#444444", "#5E5E5E", "#7A7A7A", "#A3A3A3", "#D0D0D0", "#F2F2F2"] },
+      "surface": { "role": "neutral", "displayName": "Paper", "canonical": "#FFFFFF", "cssVar": "--surface", "dark": "#0E0E0E", "tonalRamp": ["#0E0E0E", "#2B2B2B", "#5E5E5E", "#8A8A8A", "#B5B5B5", "#E3E3E3", "#F2F2F2", "#FFFFFF"] },
+      "surface-2": { "role": "neutral", "displayName": "Fog", "canonical": "#F2F2F2", "cssVar": "--surface-2", "dark": "#1B1B1B", "tonalRamp": ["#1B1B1B", "#333333", "#5E5E5E", "#8A8A8A", "#B5B5B5", "#E3E3E3", "#F2F2F2", "#FAFAFA"] },
+      "muted": { "role": "neutral", "displayName": "Graphite Text", "canonical": "#5E5E5E", "cssVar": "--muted", "dark": "#A3A3A3", "tonalRamp": ["#262626", "#3B3B3B", "#4D4D4D", "#5E5E5E", "#7A7A7A", "#A3A3A3", "#C7C7C7", "#EBEBEB"] },
+      "line": { "role": "neutral", "displayName": "Hairline", "canonical": "#E3E3E3", "cssVar": "--line", "dark": "#2B2B2B", "tonalRamp": ["#2B2B2B", "#4A4A4A", "#6B6B6B", "#8C8C8C", "#ADADAD", "#CCCCCC", "#E3E3E3", "#F5F5F5"] },
+      "shell": { "role": "neutral", "displayName": "Band Black", "canonical": "#111111", "cssVar": "--shell", "dark": "#1C1C1C", "tonalRamp": ["#111111", "#1C1C1C", "#2A2A2A", "#333333", "#5E5E5E", "#8A8A8A", "#B5B5B5", "#E3E3E3"] },
+      "shell-2": { "role": "neutral", "displayName": "Band Graphite", "canonical": "#2A2A2A", "cssVar": "--shell-2", "dark": "#333333", "tonalRamp": ["#111111", "#1C1C1C", "#2A2A2A", "#333333", "#4A4A4A", "#6B6B6B", "#8C8C8C", "#B5B5B5"] },
+      "on-shell": { "role": "neutral", "displayName": "On Band", "canonical": "#FFFFFF", "cssVar": "--on-shell", "dark": "#FFFFFF", "tonalRamp": ["#5E5E5E", "#7A7A7A", "#959595", "#B5B5B5", "#CCCCCC", "#E3E3E3", "#F2F2F2", "#FFFFFF"] },
+      "on-shell-muted": { "role": "neutral", "displayName": "Band Grey", "canonical": "#B5B5B5", "cssVar": "--on-shell-muted", "dark": "#A8A8A8", "tonalRamp": ["#3B3B3B", "#525252", "#6B6B6B", "#858585", "#A0A0A0", "#B5B5B5", "#D0D0D0", "#EBEBEB"] },
+      "income": { "role": "secondary", "displayName": "Income Green", "canonical": "#1B7A3D", "cssVar": "--in", "dark": "#5CC98A", "tonalRamp": ["#0B3A1C", "#11532A", "#1B7A3D", "#2A9A54", "#5CC98A", "#8FDDAD", "#C2EFD3", "#EAF8EF"] },
+      "income-on-shell": { "role": "secondary", "displayName": "Band Green", "canonical": "#6FD394", "cssVar": "--in-on-shell", "dark": "#6FD394", "tonalRamp": ["#0B3A1C", "#11532A", "#1B7A3D", "#2A9A54", "#6FD394", "#8FDDAD", "#C2EFD3", "#EAF8EF"] },
+      "alert": { "role": "tertiary", "displayName": "Alert Red", "canonical": "#C62828", "cssVar": "--over", "dark": "#FF7A6E", "tonalRamp": ["#4A0E0E", "#7A1717", "#A32020", "#C62828", "#E5534B", "#FF7A6E", "#FFB3AB", "#FDECEA"] },
+      "alert-soft": { "role": "tertiary", "displayName": "Alert Wash", "canonical": "#FDECEA", "cssVar": "--over-soft", "dark": "#3A1A18", "tonalRamp": ["#3A1A18", "#5C2724", "#8A3A35", "#C62828", "#FF8A80", "#FFC4BE", "#FDDCD8", "#FDECEA"] },
+      "on-alert": { "role": "tertiary", "displayName": "On Alert", "canonical": "#FFFFFF", "cssVar": "--on-over", "dark": "#1A0A08", "tonalRamp": ["#1A0A08", "#3A1A18", "#5E5E5E", "#8A8A8A", "#B5B5B5", "#E3E3E3", "#F2F2F2", "#FFFFFF"] },
+      "alert-on-shell": { "role": "tertiary", "displayName": "Band Red", "canonical": "#FF8A80", "cssVar": "--over-on-shell", "dark": "#FF8A80", "tonalRamp": ["#4A0E0E", "#7A1717", "#A32020", "#C62828", "#E5534B", "#FF8A80", "#FFB3AB", "#FDECEA"] }
+    },
+    "additionalTokens": [
+      { "name": "accent", "cssVar": "--accent", "value": "#FFFFFF", "dark": "#FFFFFF", "purpose": "Today's bar and day number in the rail." },
+      { "name": "on-accent", "cssVar": "--on-accent", "value": "#111111", "dark": "#111111", "purpose": "Declared counterpart of --accent; not used by any rule in the build." },
+      { "name": "ring", "cssVar": "--ring", "value": "#111111", "dark": "#F2F2F2", "purpose": "Focus outline and caret; white (--on-shell) inside the band." },
+      { "name": "scrim", "cssVar": "--scrim", "value": "rgba(0, 0, 0, .5)", "dark": "rgba(0, 0, 0, .65)", "purpose": "Behind the sheet and dialog." }
+    ],
+    "typographyMeta": {
+      "display": { "displayName": "Display", "purpose": "Hero money figure in the black band." },
+      "figure-input": { "displayName": "Figure input", "purpose": "Amount field in the logging sheet; the $ sign is 32px muted at the same weight and width." },
+      "headline": { "displayName": "Headline", "purpose": "Band title on Movimientos, Categorías and the empty state." },
+      "title": { "displayName": "Title", "purpose": "Page section headings (18px); sheet and dialog headings use 19px." },
+      "amount": { "displayName": "Amount", "purpose": "Movement amounts; category totals use the same width and weight at body size." },
+      "body": { "displayName": "Body", "purpose": "Default text, tabular numerals on." },
+      "label": { "displayName": "Label", "purpose": "Field labels, day headers, table headers, legend; tab labels are 12px." }
+    },
+    "shadows": [
+      { "name": "floating-action", "value": "0 4px 14px rgba(0, 0, 0, .18)", "purpose": "The black + button in the bottom bar." },
+      { "name": "popover", "value": "0 10px 30px rgba(0, 0, 0, .16)", "purpose": "The context menu growing from its trigger." }
+    ],
+    "motion": [
+      { "name": "ease-out", "value": "cubic-bezier(.23, 1, .32, 1)", "purpose": "Presses, menu, toast, dialog, rail and bar growth." },
+      { "name": "ease-in-out", "value": "cubic-bezier(.77, 0, .175, 1)", "purpose": "Segmented thumb (240ms) and tab clip-path indicator (220ms)." },
+      { "name": "ease-drawer", "value": "cubic-bezier(.32, .72, 0, 1)", "purpose": "Mobile sheet slide-up (420ms open, 260ms close); drag the head down to dismiss." },
+      { "name": "press", "value": "transform 140ms ease-out, scale(.97)", "purpose": "All buttons on press; the + uses .93, movement rows .985." },
+      { "name": "hold-to-delete", "value": "clip-path inset(0 100% 0 0) -> inset(0) over 1.2s linear; release springs back in 200ms ease-out", "purpose": "Destructive actions." },
+      { "name": "rail-grow", "value": "scaleY from 0, 520ms ease-out, 22ms stagger per day + 80ms", "purpose": "Rail bars on first load only; meters and category bars grow with scaleX 700ms after 200ms." },
+      { "name": "page-in", "value": "opacity 0 + translateY(6px), 320ms ease-out", "purpose": "Page children on first load." },
+      { "name": "reduced-motion", "value": "prefers-reduced-motion: reduce", "purpose": "Entrance animations removed (page fades), sheet and toast fade without translate, press scales and sliding indicators disabled." }
+    ],
+    "breakpoints": [
+      { "name": "desktop-sheet", "value": "640px", "purpose": "Sheet becomes a centered 540px floating card; drag handle hidden." },
+      { "name": "content-max", "value": "720px", "purpose": "Max width of band and page content." },
+      { "name": "tabbar-max", "value": "560px", "purpose": "Max width of the bottom bar's tab grid." }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Ink slab for the main action of a form or dialog.",
+      "html": "<button class=\"ds-btn\">Guardar</button>",
+      "css": ".ds-btn { min-height: 46px; border: 0; border-radius: 12px; padding: 0 18px; font: 700 15px Archivo, 'Segoe UI', system-ui, sans-serif; background: var(--ink, #111111); color: var(--surface, #FFFFFF); cursor: pointer; transition: transform 140ms cubic-bezier(.23, 1, .32, 1), background-color 150ms ease; } .ds-btn:hover { background: #2A2A2A; } .ds-btn:active { transform: scale(.97); } .ds-btn:focus-visible { outline: 2px solid var(--ring, #111111); outline-offset: 2px; }"
+    },
+    {
+      "name": "Ghost Button",
+      "kind": "button",
+      "refersTo": "button-ghost",
+      "description": "Secondary action such as Cancelar.",
+      "html": "<button class=\"ds-btn-ghost\">Cancelar</button>",
+      "css": ".ds-btn-ghost { min-height: 46px; border: 0; border-radius: 12px; padding: 0 18px; font: 700 15px Archivo, 'Segoe UI', system-ui, sans-serif; background: var(--surface-2, #F2F2F2); color: var(--ink, #111111); cursor: pointer; transition: transform 140ms cubic-bezier(.23, 1, .32, 1); } .ds-btn-ghost:active { transform: scale(.97); } .ds-btn-ghost:focus-visible { outline: 2px solid var(--ring, #111111); outline-offset: 2px; }"
+    },
+    {
+      "name": "Hold to Delete",
+      "kind": "button",
+      "refersTo": "button-hold-delete",
+      "description": "Destructive action: hold until the red fill sweeps across.",
+      "html": "<button class=\"ds-hold\">Mantén para eliminar<span class=\"ds-hold-fill\">Mantén para eliminar</span></button>",
+      "css": ".ds-hold { position: relative; overflow: hidden; min-height: 46px; border: 0; border-radius: 12px; padding: 0 16px; font: 700 15px Archivo, 'Segoe UI', system-ui, sans-serif; background: var(--over-soft, #FDECEA); color: var(--over, #C62828); cursor: pointer; } .ds-hold-fill { position: absolute; inset: 0; display: grid; place-items: center; background: var(--over, #C62828); color: var(--on-over, #FFFFFF); clip-path: inset(0 100% 0 0); transition: clip-path 200ms cubic-bezier(.23, 1, .32, 1); } .ds-hold:active .ds-hold-fill { clip-path: inset(0 0 0 0); transition: clip-path 1.2s linear; } .ds-hold:focus-visible { outline: 2px solid var(--ring, #111111); outline-offset: 2px; }"
+    },
+    {
+      "name": "Field",
+      "kind": "input",
+      "refersTo": "field",
+      "description": "Text, select and date input on Fog.",
+      "html": "<input class=\"ds-field\" placeholder=\"Nota (opcional)\">",
+      "css": ".ds-field { width: 100%; min-height: 46px; border: 1px solid var(--line, #E3E3E3); background: var(--surface-2, #F2F2F2); color: var(--ink, #111111); border-radius: 11px; padding: 10px 12px; font: 400 16px Archivo, 'Segoe UI', system-ui, sans-serif; } .ds-field:focus { outline: 2px solid var(--ring, #111111); outline-offset: 0; border-color: transparent; }"
+    },
+    {
+      "name": "Category Chips",
+      "kind": "chip",
+      "refersTo": "chip-category",
+      "description": "Category picker in the sheet; no color mark, selected is ink-filled.",
+      "html": "<div class=\"ds-chips\"><button class=\"ds-chip\" aria-checked=\"true\">Comida</button><button class=\"ds-chip\" aria-checked=\"false\">Transporte</button><button class=\"ds-chip\" aria-checked=\"false\">Salud</button></div>",
+      "css": ".ds-chips { display: flex; flex-wrap: wrap; gap: 8px; } .ds-chip { min-height: 44px; border: 1px solid var(--line, #E3E3E3); border-radius: 999px; padding: 0 14px; background: none; color: var(--ink, #111111); font: 500 15px Archivo, 'Segoe UI', system-ui, sans-serif; cursor: pointer; transition: transform 140ms cubic-bezier(.23, 1, .32, 1), border-color 150ms ease; } .ds-chip[aria-checked='false']:hover { border-color: var(--muted, #5E5E5E); } .ds-chip[aria-checked='true'] { background: var(--ink, #111111); border-color: var(--ink, #111111); color: var(--surface, #FFFFFF); } .ds-chip:active { transform: scale(.97); } .ds-chip:focus-visible { outline: 2px solid var(--ring, #111111); outline-offset: 2px; }"
+    },
+    {
+      "name": "Movement Row",
+      "kind": "custom",
+      "refersTo": "initial-tile",
+      "description": "Initial tile, name and note, amount; green only for income.",
+      "html": "<div><button class=\"ds-mov\"><span class=\"ds-ic\">C</span><span class=\"ds-tx\"><b>Comida</b><small>Almuerzo</small></span><span class=\"ds-m\">$8.50</span></button><button class=\"ds-mov\"><span class=\"ds-ic ds-in\">S</span><span class=\"ds-tx\"><b>Sueldo</b><small>Quincena</small></span><span class=\"ds-m ds-in\">+$650.00</span></button></div>",
+      "css": ".ds-mov { display: grid; grid-template-columns: 36px 1fr auto; gap: 12px; align-items: center; width: 100%; min-height: 56px; padding: 8px 6px; border: 0; border-radius: 10px; background: none; color: var(--ink, #111111); text-align: left; font: 400 15px/1.45 Archivo, 'Segoe UI', system-ui, sans-serif; font-variant-numeric: tabular-nums; cursor: pointer; } .ds-mov:hover { background: var(--surface-2, #F2F2F2); } .ds-mov:active { transform: scale(.985); background: var(--surface-2, #F2F2F2); } .ds-mov:focus-visible { outline: 2px solid var(--ring, #111111); outline-offset: 2px; } .ds-ic { width: 36px; height: 36px; border-radius: 10px; background: var(--surface-2, #F2F2F2); display: grid; place-items: center; font-weight: 700; font-size: 14px; color: var(--ink, #111111); } .ds-mov:hover .ds-ic { background: var(--surface, #FFFFFF); } .ds-tx { display: grid; gap: 2px; min-width: 0; } .ds-tx b { font-weight: 600; } .ds-tx small { color: var(--muted, #5E5E5E); font-size: 13px; } .ds-m { font-weight: 700; font-size: 16px; font-stretch: 110%; } .ds-in { color: var(--in, #1B7A3D); }"
+    },
+    {
+      "name": "Band Hero",
+      "kind": "card",
+      "refersTo": "band-pill",
+      "description": "The black band: Te quedan, figure, per-day line and Entró/Salió pills.",
+      "html": "<div class=\"ds-band\"><p class=\"ds-k\">Te quedan</p><p class=\"ds-n\">$412.30</p><p class=\"ds-s\">unos <b>$41.23</b> por día hasta el 30 · cobras en 10 días</p><ul class=\"ds-pills\"><li>Entró<b class=\"ds-pin\">$650.00</b></li><li>Salió<b>$237.70</b></li></ul></div>",
+      "css": ".ds-band { background: var(--shell, #111111); color: var(--on-shell, #FFFFFF); padding: 14px 16px 24px; display: grid; gap: 4px; font-family: Archivo, 'Segoe UI', system-ui, sans-serif; font-variant-numeric: tabular-nums; } .ds-band p { margin: 0; } .ds-k { font-size: 15px; color: var(--on-shell-muted, #B5B5B5); } .ds-n { font-weight: 800; font-stretch: 118%; font-size: clamp(44px, 14vw, 64px); line-height: 1; letter-spacing: -.02em; } .ds-s { margin-top: 4px; font-size: 15px; color: var(--on-shell-muted, #B5B5B5); } .ds-s b { color: var(--on-shell, #FFFFFF); } .ds-pills { margin: 12px 0 0; padding: 0; list-style: none; display: flex; gap: 8px; flex-wrap: wrap; font-size: 14px; color: var(--on-shell-muted, #B5B5B5); } .ds-pills li { background: var(--shell-2, #2A2A2A); border-radius: 999px; padding: 7px 14px; } .ds-pills b { color: var(--on-shell, #FFFFFF); margin-left: 4px; } .ds-pills b.ds-pin { color: var(--in-on-shell, #6FD394); }"
+    },
+    {
+      "name": "Bottom Bar",
+      "kind": "nav",
+      "refersTo": "tab-active",
+      "description": "White bar with hairline top, active tab on Fog, black + at the center.",
+      "html": "<nav class=\"ds-tabs\"><button class=\"ds-tab ds-on\"><svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\"><path d=\"M4 20V11M10 20V5M16 20v-6M2 20h20\"/></svg>Resumen</button><button class=\"ds-tab\"><svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\"><path d=\"M9 6h12M9 12h12M9 18h12\"/><circle cx=\"4\" cy=\"6\" r=\"1\" fill=\"currentColor\"/><circle cx=\"4\" cy=\"12\" r=\"1\" fill=\"currentColor\"/><circle cx=\"4\" cy=\"18\" r=\"1\" fill=\"currentColor\"/></svg>Movimientos</button><button class=\"ds-add\" aria-label=\"Registrar movimiento\"><svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.6\" stroke-linecap=\"round\"><path d=\"M12 5v14M5 12h14\"/></svg></button><button class=\"ds-tab\"><svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><circle cx=\"7\" cy=\"7\" r=\"3\"/><circle cx=\"17\" cy=\"7\" r=\"3\"/><circle cx=\"7\" cy=\"17\" r=\"3\"/><circle cx=\"17\" cy=\"17\" r=\"3\"/></svg>Categorías</button></nav>",
+      "css": ".ds-tabs { display: grid; grid-template-columns: 1fr 1fr 76px 1fr; gap: 4px; align-items: center; padding: 6px 8px; background: var(--surface, #FFFFFF); border-top: 1px solid var(--line, #E3E3E3); font-family: Archivo, 'Segoe UI', system-ui, sans-serif; } .ds-tab { min-height: 54px; padding: 6px 2px; border: 0; border-radius: 12px; background: none; display: grid; justify-items: center; align-content: center; gap: 3px; font-size: 12px; font-weight: 600; color: var(--muted, #5E5E5E); cursor: pointer; transition: background-color 150ms ease, color 150ms ease; } .ds-tab svg { width: 22px; height: 22px; } .ds-tab:hover { color: var(--ink, #111111); } .ds-tab.ds-on { color: var(--ink, #111111); background: var(--surface-2, #F2F2F2); } .ds-tab:focus-visible, .ds-add:focus-visible { outline: 2px solid var(--ring, #111111); outline-offset: 2px; } .ds-add { width: 56px; height: 56px; justify-self: center; border: 0; border-radius: 50%; display: grid; place-items: center; background: var(--ink, #111111); color: var(--surface, #FFFFFF); box-shadow: 0 4px 14px rgba(0, 0, 0, .18); cursor: pointer; transition: transform 140ms cubic-bezier(.23, 1, .32, 1); } .ds-add svg { width: 26px; height: 26px; } .ds-add:active { transform: scale(.93); }"
+    },
+    {
+      "name": "Undo Toast",
+      "kind": "custom",
+      "refersTo": "toast",
+      "description": "Ink pill confirming an action with an underlined undo.",
+      "html": "<div class=\"ds-toast\"><span>Movimiento eliminado</span><button class=\"ds-undo\">Deshacer</button></div>",
+      "css": ".ds-toast { display: inline-flex; align-items: center; gap: 14px; min-height: 48px; padding: 4px 16px; border-radius: 14px; background: var(--ink, #111111); color: var(--surface, #FFFFFF); font: 600 14px Archivo, 'Segoe UI', system-ui, sans-serif; } .ds-undo { min-height: 44px; margin-right: -10px; padding: 0 12px; border: 0; border-radius: 10px; background: none; color: var(--surface, #FFFFFF); font: inherit; font-weight: 700; text-decoration: underline; text-underline-offset: 4px; cursor: pointer; } .ds-undo:hover { background: rgba(255, 255, 255, .12); } .ds-undo:focus-visible { outline: 2px solid var(--surface, #FFFFFF); outline-offset: 2px; }"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Black Ledger Band",
+    "overview": "Tablero de Dinero is a black-and-white money tool. The user chose \"the category standard\" in black and white: the standing exit, the canon path of personal-finance apps, not a rolled concept. That choice was made in another session and replaced the earlier petrol direction that came out of the three-way debate; nothing from the petrol world (petrol band, maravilla accent, per-category colors) carries forward. The brand commitment the user asked for in so many words is the governing rule of this file: \"Interfaz en blanco y negro; verde solo para lo positivo, rojo solo para alertas\".\n\nThe screen has three bands. A black top band holds the answer: \"Te quedan\", the figure, the per-day line, the Entró/Salió pills and the quincena rail. Below it, a plain white page that starts flush under the band (no overlap, no rounded top corners) holds sections separated by hairlines. At the bottom, a white tab bar with a top border and a black + in the middle. Density is calm and phone-first, with a single 720px column on desktop.\n\nColor is reserved for meaning. Everything structural is ink, white or grey; green appears only where money comes in, and red only where something is wrong (negative balance, overspending, deleting). Spending is ink, never red. Motion carries the craft that color no longer does: a drawer sheet you can drag down, a hold-to-delete fill, a clip-path tab indicator, a sliding segmented control, an undo toast, and the rail growing on first load.",
+    "keyCharacteristics": [
+      "Black top band, white page, white bottom bar; strict achromatic structure.",
+      "Green only for income, red only for alerts; spending stays ink.",
+      "Categories are told apart by their initial in a grey tile, not by color.",
+      "Archivo throughout, widened (wdth 118, weight 800) for money figures; tabular numerals everywhere.",
+      "Flat surfaces; shadow only on the floating + and the context menu.",
+      "Motion is functional and fully covered by reduced-motion fallbacks."
+    ],
+    "rules": [
+      { "name": "The Two Hues Rule", "body": "The interface is black and white. Green appears only for income, red only for alerts. No third hue, no decorative tint, no brand accent.", "section": "colors" },
+      { "name": "The Spending Is Ink Rule", "body": "An expense is never red. Red means a problem (negative, overspending) or a destructive act. Expense amounts, bars and the expense trend line are ink.", "section": "colors" },
+      { "name": "The Initial, Not Color Rule", "body": "Categories have no color in the interface. A category is marked by its uppercase initial in a 36px Fog tile; the letter turns Income Green for income categories. Do not reintroduce swatches, color pickers or colored dots.", "section": "colors" },
+      { "name": "The Wide Money Rule", "body": "Money figures are Archivo at wdth 110-118 and weight 700-800; prose never is.", "section": "typography" },
+      { "name": "The Tabular Rule", "body": "The body sets `tabular-nums`, so every amount aligns in columns and does not jitter while typing.", "section": "typography" },
+      { "name": "The Two Shadows Rule", "body": "Only the + button and the context menu carry shadow, and both are soft and blurred. Cards, sections and the bottom bar stay flat; the bar separates with a hairline.", "section": "elevation" }
+    ],
+    "dos": [
+      "**Do** keep every structural element in ink, Paper, Fog, Graphite Text or hairline; use green only for income and red only for alerts.",
+      "**Do** mark categories with their initial in a Fog tile; turn the letter green for income.",
+      "**Do** use the band-tuned variants (Band Green, Band Red) for color on the black band.",
+      "**Do** set money in Archivo at wdth 110-118, weight 700-800, with tabular numerals.",
+      "**Do** make primary actions ink with Paper text, and the selected chip ink-filled.",
+      "**Do** give every animation a reduced-motion fallback (fade or none), as the build does.",
+      "**Do** keep targets at 44px or more."
+    ],
+    "donts": [
+      "**Don't** color an expense red; red is for negative, overspending and deleting.",
+      "**Don't** show category colors anywhere in the interface: no swatches, dots, colored bars or \"Cambiar color\".",
+      "**Don't** add a brand accent hue, tint the band, or reintroduce petrol or maravilla.",
+      "**Don't** overlap the page onto the band or round the page's top corners.",
+      "**Don't** add shadows to cards, sections or the bottom bar; only the + and the context menu float.",
+      "**Don't** decorate with Ecuadorian folk imagery (flags, volcanoes, sucres); the local character lives in the quincena logic and the language."
+    ]
+  }
+}
